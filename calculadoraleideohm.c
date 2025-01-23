@@ -36,17 +36,17 @@ Função calculadora
 void calculadora(void){
 
 	float corrente = 0, tensao = 0, potencia = 0, resistor = 0;
-	int opcao;
+	short int opcao;
 	
 
 /*Menu de opções*/
 	do{	
 		printf("Menu de opções:\n\n");	
-		printf("1 - Calcular Potência.\n");
-		printf("2 - Calcular Tensão.\n");
-		printf("3 - Calcular Corrente.\n");
-		printf("4 - Calcular Resistor.\n");
-		printf("5 - Info\n");
+		printf("1 - Calcular Potência. (P = E x I)\n");
+		printf("2 - Calcular Tensão. (E = R x I)\n");
+		printf("3 - Calcular Corrente. (I = E / R)\n");
+		printf("4 - Calcular Resistor. (R = E / I)\n");
+		printf("5 - Info.\n");
 		printf("6 - Sair.\n\n");/*Fim menu de opções*/
 	
 /*Lê opção desejada*/
@@ -128,7 +128,7 @@ void calculadora(void){
 			printf("Programa em C");
 			printf("                    +\n");
 			printf("+ ");
-			printf("Calculadora Lei de Ohm v1.1");
+			printf("Calculadora Lei de Ohm v1.2");
 			printf("      +\n");
 			printf("+ ");
 			printf("Autor: Pablo Ramalho");
@@ -136,7 +136,9 @@ void calculadora(void){
 			printf("+ ");
 			printf("Data: janeiro de 2025");
 			printf("            +\n");  
-		printf("++++++++++++++++++++++++++++++++++++\n\n");/*Fim cabeçalho*/
+			printf("++++++++++++++++++++++++++++++++++++\n\n");/*Fim cabeçalho*/
+
+			break;
 
 		case 6:
 			printf("------------------------------\n");
