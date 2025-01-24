@@ -13,25 +13,30 @@ Bibliotecas
 #include <locale.h>
 
 /*====================================
-ProtÃ³tipo da funÃ§Ã£o
+Protótipo da função
 ====================================*/
 void calculadora(void);
 
 /*====================================
-FunÃ§Ã£o main
+Função main
 ====================================*/
 int main(){
 	setlocale(LC_ALL, "portuguese_Brazil");
 	
 		calculadora();
 	
-	system("pause");
+	puts("Pressione qualquer tecla para sair, mané.");  	/*Imprime uma string no console.
+															Não serve para imprimir variáveis.
+															De forma automática insere uma nova linha */
+
+	getchar();
+
 	return 0;
-}/*Fim funÃ§Ã£o main*/
+}/*Fim função main*/
 
 
 /*====================================
-FunÃ§Ã£o calculadora
+Função calculadora
 ====================================*/
 void calculadora(void){
 
@@ -41,9 +46,9 @@ void calculadora(void){
 
 /*Menu de opÃ§Ãµes*/
 	do{	
-		printf("Menu de opÃ§Ãµes:\n\n");	
-		printf("1 - Calcular PotÃªncia. (P = E x I)\n");
-		printf("2 - Calcular TensÃ£o. (E = R x I)\n");
+		printf("Menu de opï¿½ï¿½es:\n\n");	
+		printf("1 - Calcular Potï¿½ncia. (P = E x I)\n");
+		printf("2 - Calcular Tensï¿½o. (E = R x I)\n");
 		printf("3 - Calcular Corrente. (I = E / R)\n");
 		printf("4 - Calcular Resistor. (R = E / I)\n");
 		printf("5 - Info.\n");
@@ -75,15 +80,15 @@ void calculadora(void){
 			break;
 
 		case 2:
-			printf("------------------------------\n");
-			printf("Calculo da TensÃ£o\n");
-			printf("------------------------------\n\n");
+			puts("------------------------------\n");
+			puts("Calculo da TensÃ£o\n");
+			puts("------------------------------\n\n");
 		
-			printf("Resistensia em Ohms: ");
+			puts("Resistensia em Ohms: ");
 			scanf("%f", &resistor);
 			fflush(stdin);
 		
-			printf("Corrente em Amperes: ");
+			puts("Corrente em Amperes: ");
 			scanf("%f", &corrente);
 		
 			printf("TensÃ£o = %.2f Volts. \n\n", resistor*corrente);
