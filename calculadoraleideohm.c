@@ -25,7 +25,7 @@ int main(){
 	
 		calculadora();
 	
-	puts("Pressione qualquer tecla para sair, mané.");  	/*Imprime uma string no console.
+	puts("Aperta qualquer tecla ai...");  				/*Imprime uma string no console.
 															Não serve para imprimir variáveis.
 															De forma automática insere uma nova linha */
 
@@ -44,96 +44,186 @@ void calculadora(void){
 	short int opcao;
 	
 
-/*Menu de opÃ§Ãµes*/
+/*Menu de opções*/
 	do{	
-		printf("Menu de opï¿½ï¿½es:\n\n");	
-		printf("1 - Calcular Potï¿½ncia. (P = E x I)\n");
-		printf("2 - Calcular Tensï¿½o. (E = R x I)\n");
-		printf("3 - Calcular Corrente. (I = E / R)\n");
-		printf("4 - Calcular Resistor. (R = E / I)\n");
-		printf("5 - Info.\n");
-		printf("6 - Sair.\n\n");/*Fim menu de opÃ§Ãµes*/
+		puts("Menu de opções:\n");	
+		puts(" 1 - Potência. P = E x I"); 			/*Ok*/
+		puts(" 2 - Potência. P = R x I^2");			/*Ok*/
+		puts(" 3 - Potência. P = E^2 / R");			/*Ok*/
+		puts(" 4 - Tensão. E = R x I");				/*Ok*/
+		puts(" 5 - Tensão. E = P / I");
+		puts(" 6 - Tensão. E = v(P x R)");
+		puts(" 7 - Corrente. I = E / R");
+		puts(" 8 - Corrente. I = P / E");
+		puts(" 9 - Corrente. I = v(P / R)");
+		puts("10 - Resistor. R = E / I");
+		puts("11 - Resistor. R = E^2 / P");
+		puts("12 - Resistor. R = P / I^2");
+		puts("13 - Info.");
+		puts("14 - Crédito.");
+		puts("15 - Sair.\n");/*Fim menu de opções*/
 	
-/*LÃª opÃ§Ã£o desejada*/
-		printf("OpÃ§Ã£o desejada: ");
+/*Lê opção desejada*/
+		printf("Opção desejada: ");
 		scanf("%d", &opcao);
 		putchar('\n');
 
-/*Limpa o menu a cada escolha, impedindo sua repetiÃ§Ã£o.*/
+/*Limpa o menu a cada escolha, impedindo sua repetição.*/
 		system("CLS"); 
 
 	switch(opcao){
 		case 1: 
-			printf("------------------------------\n");
-			printf("Calculo da PotÃªncia.\n");
-			printf("------------------------------\n\n");
+			puts("------------------------------");
+			puts("Calculo da Potência.");
+			puts("------------------------------\n");
 		
-			printf("TensÃ£o em Volts: ");
+			printf("Tensão em Volts: ");
 			scanf("%f", &tensao);
 			fflush(stdin);
 		
 			printf("Corrente em Amperes: ");
 			scanf("%f", &corrente);
 		
-			printf("PotÃªncia = %.2f Wats. \n\n", tensao*corrente);
+			printf("==============================\n");
+			printf("Potência = %.2f Wats. \n", tensao*corrente);
+			printf("==============================\n\n");
 
 			break;
-
-		case 2:
+			
+		case 2: 
+			puts("------------------------------");
+			puts("Calculo da Potência.");
 			puts("------------------------------\n");
-			puts("Calculo da TensÃ£o\n");
-			puts("------------------------------\n\n");
 		
-			puts("Resistensia em Ohms: ");
+			printf("Resistência em Ohms: ");
 			scanf("%f", &resistor);
 			fflush(stdin);
 		
-			puts("Corrente em Amperes: ");
+			printf("Corrente em Amperes: ");
 			scanf("%f", &corrente);
 		
-			printf("TensÃ£o = %.2f Volts. \n\n", resistor*corrente);
+			printf("==============================\n");
+			printf("Potência = %.2f Wats. \n", resistor*(corrente*corrente));
+			printf("==============================\n\n");
 
 			break;
 
 		case 3:
-			printf("------------------------------\n");
-			printf("Calculo da Corrente\n");
-			printf("------------------------------\n\n");
-		
-			printf("TensÃ£o em Volts: ");
-			scanf("%.2f", &tensao);
-			fflush(stdin);
-		
-			printf("ResistÃªncia em Ohms: ");
+			puts("------------------------------");
+			puts("Calculo de Potência");
+			puts("------------------------------\n");
+			
+			printf("Tensão em Volts: ");
+			scanf("%f", &tensao);
+			
+			printf("Resistência em Ohms: ");
 			scanf("%f", &resistor);
-		
-			printf("Corrente = %.2f Amperes. \n\n", tensao/resistor);
-
+			
+			printf("==============================\n");
+			printf("Potência = %.2f Wats. \n", (tensao*tensao)/resistor);
+			printf("==============================\n\n");
+			
 			break;
 
 		case 4:
-			printf("------------------------------\n");
-			printf("Calculo da Resistor\n");
-			printf("------------------------------\n\n");
-		
-			printf("TensÃ£o em Volts: ");
-			scanf("%f", &tensao);
-			fflush(stdin);
-		
+			puts("------------------------------");
+			puts("Calculo de Tensão");
+			puts("------------------------------\n");
+			
+			printf("Resistencia em Ohms: ");
+			scanf("%f", &resistor);
+			
 			printf("Corrente em Amperes: ");
 			scanf("%f", &corrente);
+			
+			printf("==============================\n");
+			printf("Tensão = %.2f Volts. \n", resistor*corrente);
+			printf("==============================\n\n");
+			
 		
-			printf("Resistencia = %.2f Ohms. \n\n", tensao/corrente);
+
 
 			break;
 
-		case 5: 
+		case 5:
+			puts("------------------------------");
+			puts("Calculo de Tensão");
+			puts("------------------------------\n");
+		
+
+			break;
+			
+		case 6:
+			puts("------------------------------");
+			puts("Calculo de Tensão");
+			puts("------------------------------\n");
+	
+	
+			break;
+			
+		case 7:
+			puts("------------------------------");
+			puts("Calculo de Corrente");
+			puts("------------------------------\n");
+	
+	
+			break;
+			
+		case 8:
+			puts("------------------------------");
+			puts("Calculo de Corrente");
+			puts("------------------------------\n");
+	
+	
+			break;
+			
+		case 9:
+			puts("------------------------------");
+			puts("Calculo de Corrente");
+			puts("------------------------------\n");
+	
+	
+			break;
+			
+		case 10:
+			puts("------------------------------");
+			puts("Calculo da Resistor");
+			puts("------------------------------\n");
+	
+	
+			break;
+			
+		case 11:
+			puts("------------------------------");
+			puts("Calculo da Resistor");
+			puts("------------------------------\n");
+	
+	
+			break;
+			
+		case 12:
+			puts("------------------------------");
+			puts("Calculo da Resistor");
+			puts("------------------------------\n");
+	
+	
+			break;
+			
+		case 13:
+			puts("------------------------------");
+			puts("Informação e ajuda");
+			puts("------------------------------\n");
+	
+	
+			break;
+
+		case 14: 
 			printf("++++++++++++++++++++++++++++++++++++\n");
 			printf("+ ");
 			printf("Programa em C");
 			printf("                    +\n");
 			printf("+ ");
-			printf("Calculadora Lei de Ohm v1.2");
+			printf("Calculadora Lei de Ohm v2.3");
 			printf("      +\n");
 			printf("+ ");
 			printf("Autor: Pablo Ramalho");
@@ -141,24 +231,24 @@ void calculadora(void){
 			printf("+ ");
 			printf("Data: janeiro de 2025");
 			printf("            +\n");  
-			printf("++++++++++++++++++++++++++++++++++++\n\n");/*Fim cabeÃ§alho*/
+			printf("++++++++++++++++++++++++++++++++++++\n\n");/*Fim cabeçalho*/
 
 			break;
 
-		case 6:
-			printf("------------------------------\n");
-			printf("VocÃª escolheu sair.\n");
-			printf("------------------------------\n\n");
+		case 15:
+			puts("----------------------");
+			puts("Você escolheu sair, mané.");
+			puts("----------------------\n");
 
 			break;
 
 		default:
-			printf("------------------------------\n");
-			printf("OpÃ§Ã£o invÃ¡lida.\n");
-			printf("------------------------------\n\n");
+			puts("------------------------------");
+			printf("PRESTA ATENÇÃO AI!!!\nEssa opção não existe.\n");
+			puts("------------------------------\n");
 	}
 
-	}while(opcao!=6);
+	}while(opcao!=15);
 
 
 }
