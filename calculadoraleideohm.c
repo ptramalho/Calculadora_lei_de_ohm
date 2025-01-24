@@ -21,7 +21,7 @@ void calculadora(void);
 Função main
 ====================================*/
 int main(){
-	setlocale(LC_ALL, "Portuguese_Brazil");
+	setlocale(LC_ALL, "portuguese_Brazil");
 	
 		calculadora();
 	
@@ -70,7 +70,7 @@ void calculadora(void){
 			printf("Corrente em Amperes: ");
 			scanf("%f", &corrente);
 		
-			printf("Potencia = %.2f Wats. \n\n", tensao*corrente);
+			printf("Potência = %.2f Wats. \n\n", tensao*corrente);
 
 			break;
 
