@@ -14,23 +14,24 @@ Bibliotecas
 #include <math.h>
 
 /*====================================
-Protótipo da função
+Protótipo da Função
 ====================================*/
 void calculadora(void);
 
 /*====================================
-Função main
+Função Main
 ====================================*/
 int main(void){
 	setlocale(LC_ALL, "portuguese_Brazil");
 	
 		calculadora();
 	
-	puts("Aperte qualquer tecla...");  						/*Imprime uma string no console.
-															Não serve para imprimir variáveis.
-															De forma automática insere uma nova linha */
+	puts("Aperte qualquer tecla...");  		/*Imprime uma string no console. Não serve para imprimir variáveis.	De forma automática insere uma nova linha */
 
-	getchar();
+	getchar();								/* ao utilizar a função getchar() dentro de um loop. A função getchar() lê um único caractere da entrada,
+											mas frequentemente deixa um caractere de nova linha (\n) no buffer de entrada após a leitura da entrada do
+											usuário. Esse caractere de nova linha é então consumido pela próxima chamada de getchar() na iteração seguinte
+											do loop, levando a um comportamento inesperado.*/
 
 	return 0;
 }/*Fim função main*/
@@ -48,25 +49,25 @@ void calculadora(void){
 /*Menu de opções*/
 	do{	
 		puts("------------------------------");
-		puts("Opções de Cálculo:\n");			
-		puts(" 1 - Potência. P = E x I"); 			/*Ok*/
-		puts(" 2 - Potência. P = R x I^2");			/*Ok*/
-		puts(" 3 - Potência. P = E^2 / R");			/*Ok*/
-		puts(" 4 - Tensão. E = R x I");				/*Ok*/
-		puts(" 5 - Tensão. E = P / I");				/*Ok*/
-		puts(" 6 - Tensão. E = v(P x R)");			/*Ok*/
-		puts(" 7 - Corrente. I = E / R");			/*Ok*/
-		puts(" 8 - Corrente. I = P / E");			/*Ok*/
-		puts(" 9 - Corrente. I = v(P / R)");
-		puts("10 - Resistor. R = E / I");
-		puts("11 - Resistor. R = E^2 / P");
-		puts("12 - Resistor. R = P / I^2");
-		puts("13 - Info.");
+		puts("Opções de Cálculo. (Variáveis Disponíveis)\n");			
+		puts(" 1 - Potência.\t(Tensão e Corrente)"); 			
+		puts(" 2 - Potência.\t(Resistor e Corrente)");			
+		puts(" 3 - Potência.\t(Tensão e Resistor)");			
+		puts(" 4 - Tensão.\t(Resistor e Corrente)");				
+		puts(" 5 - Tensão.\t(Potência e Corrente)");				
+		puts(" 6 - Tensão.\t(Potência e resistor)");			
+		puts(" 7 - Corrente.\t(Tensão e Resistor)");			
+		puts(" 8 - Corrente.\t(Potência e Tensão)");			
+		puts(" 9 - Corrente.\t(Potência e Resistor)");
+		puts("10 - Resistor.\t(Tensão e Corrente)");
+		puts("11 - Resistor.\t(Tensão e Potência)");
+		puts("12 - Resistor.\t(Potência e Corrente)");
+		puts("13 - Ajuda.");
 		puts("14 - Crédito.");
 		puts("15 - Sair.");
 		puts("------------------------------");/*Fim menu de opções*/
 	
-/*Lê opção desejada*/
+/*Lista opção desejada*/
 		printf("Opção desejada: ");
 		scanf("%d", &opcao);
 		putchar('\n');
@@ -285,8 +286,45 @@ void calculadora(void){
 			
 		case 13:
 			puts("------------------------------");
-			puts("Informação e ajuda");
+			puts("Ajuda");
 			puts("------------------------------\n");
+			
+			puts("Significado das siglas:\n");
+			
+			puts("P -> Potência em Wats");
+			puts("R -> Resistência em Ohms");
+			puts("I -> Corrente em Amperes");
+			puts("E -> Tensão em Volts");
+			
+			
+			puts("------------------------------");
+			puts("Formulas usadas:\n");
+			
+			puts("Cálculo Potência:");
+			puts(" 1 - Potência. P = E x I"); 			
+			puts(" 2 - Potência. P = R x I^2");			
+			puts(" 3 - Potência. P = E^2 / R");	
+			putchar('\n');
+			putchar('\n');	
+			puts("Cálculo de Tensão:");	
+			puts(" 4 - Tensão. E = R x I");				
+			puts(" 5 - Tensão. E = P / I");				
+			puts(" 6 - Tensão. E = v(P x R)");
+			putchar('\n');
+			putchar('\n');	
+			puts("Cálculo de Corrente:");		
+			puts(" 7 - Corrente. I = E / R");			
+			puts(" 8 - Corrente. I = P / E");			
+			puts(" 9 - Corrente. I = v(P / R)");
+			putchar('\n');
+			putchar('\n');
+			puts("Cálculo de Resistor:");
+			puts("10 - Resistor. R = E / I");
+			puts("11 - Resistor. R = E^2 / P");
+			puts("12 - Resistor. R = P / I^2");
+			
+			putchar('\n');
+			putchar('\n');
 			
 			break;
 
