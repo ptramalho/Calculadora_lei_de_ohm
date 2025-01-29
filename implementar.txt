@@ -1,0 +1,4 @@
+***Para Implementar no código:***
+
+-Tabela de tensão de trabalho cores de LEDs;
+-Cálcular resistor para LED;

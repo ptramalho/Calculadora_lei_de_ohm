@@ -26,7 +26,7 @@ int main(void){
 	
 		calculadora();
 	
-	puts("Aperte qualquer tecla...");  		/*Imprime uma string no console. Não serve para imprimir variáveis.	De forma automática insere uma nova linha */
+	puts("Enter para sair...");  		/*Imprime uma string no console. Não serve para imprimir variáveis.	De forma automática insere uma nova linha */
 
 	getchar();								/* ao utilizar a função getchar() dentro de um loop. A função getchar() lê um único caractere da entrada,
 											mas frequentemente deixa um caractere de nova linha (\n) no buffer de entrada após a leitura da entrada do
@@ -49,15 +49,15 @@ void calculadora(void){
 /*Menu de opções*/
 	do{	
 		puts("------------------------------");
-		puts("Opções de Cálculo. (Variáveis Disponíveis)\n");			
-		puts(" 1 - Potência.\t(Tensão e Corrente)"); 			
-		puts(" 2 - Potência.\t(Resistor e Corrente)");			
-		puts(" 3 - Potência.\t(Tensão e Resistor)");			
-		puts(" 4 - Tensão.\t(Resistor e Corrente)");				
-		puts(" 5 - Tensão.\t(Potência e Corrente)");				
-		puts(" 6 - Tensão.\t(Potência e resistor)");			
-		puts(" 7 - Corrente.\t(Tensão e Resistor)");			
-		puts(" 8 - Corrente.\t(Potência e Tensão)");			
+		puts("Opções de Cálculo. (Variáveis Disponíveis)\n");
+		puts(" 1 - Potência.\t(Tensão e Corrente)"); 
+		puts(" 2 - Potência.\t(Resistor e Corrente)");
+		puts(" 3 - Potência.\t(Tensão e Resistor)");
+		puts(" 4 - Tensão.\t(Resistor e Corrente)");
+		puts(" 5 - Tensão.\t(Potência e Corrente)");
+		puts(" 6 - Tensão.\t(Potência e resistor)");
+		puts(" 7 - Corrente.\t(Tensão e Resistor)");
+		puts(" 8 - Corrente.\t(Potência e Tensão)");
 		puts(" 9 - Corrente.\t(Potência e Resistor)");
 		puts("10 - Resistor.\t(Tensão e Corrente)");
 		puts("11 - Resistor.\t(Tensão e Potência)");
