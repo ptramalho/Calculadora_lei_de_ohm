@@ -16,7 +16,9 @@ Bibliotecas
 /*====================================
 Protótipo da Função
 ====================================*/
+void limpar_buffer(void);
 void calculadora(void);
+
 
 /*====================================
 Função Main
@@ -28,14 +30,20 @@ int main(void){
 	
 	puts("Enter para sair...");  		/*Imprime uma string no console. Não serve para imprimir variáveis.	De forma automática insere uma nova linha */
 
-	getchar();								/* ao utilizar a função getchar() dentro de um loop. A função getchar() lê um único caractere da entrada,
-											mas frequentemente deixa um caractere de nova linha (\n) no buffer de entrada após a leitura da entrada do
-											usuário. Esse caractere de nova linha é então consumido pela próxima chamada de getchar() na iteração seguinte
-											do loop, levando a um comportamento inesperado.*/
+    limpar_buffer();  					/*Remove caracteres não lidos para correto funcionamento, neste caso, do getchar();*/
+    
+    getchar();
 
 	return 0;
 }/*Fim função main*/
 
+/*====================================
+Função limpar buffer
+====================================*/
+void limpar_buffer(void) {
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF); // Limpa todos os caracteres do buffer
+}
 
 /*====================================
 Função calculadora
